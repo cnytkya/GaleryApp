@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaleryApp.App", "GaleryApp.App\GaleryApp.App.csproj", "{22A64AE6-8F83-4125-9369-1414C50B176E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaleryApp.Models", "GaleryApp.Models\GaleryApp.Models.csproj", "{C1D2FEB2-BC70-47BA-8233-21EF19E5DC02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{22A64AE6-8F83-4125-9369-1414C50B176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22A64AE6-8F83-4125-9369-1414C50B176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22A64AE6-8F83-4125-9369-1414C50B176E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D2FEB2-BC70-47BA-8233-21EF19E5DC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D2FEB2-BC70-47BA-8233-21EF19E5DC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D2FEB2-BC70-47BA-8233-21EF19E5DC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D2FEB2-BC70-47BA-8233-21EF19E5DC02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
