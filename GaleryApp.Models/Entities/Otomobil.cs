@@ -1,10 +1,9 @@
-﻿namespace GaleryApp.Models.Entities
+﻿using GaleryApp.Models.Abstract;
+
+namespace GaleryApp.Models.Entities
 {
-    public class Otomobil
+    public class Otomobil : BaseEntity
     {
-        public int Id { get; set; }
-        public string Marka { get; set; }
-        public string Model { get; set; }
-        public int Yil { get; set; }
+        //base entityyi kalıtım aldım
     }
 }
