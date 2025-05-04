@@ -1,5 +1,6 @@
 ﻿using GaleryApp.Models.Abstract;
 using GaleryApp.Models.Interface;
+using Newtonsoft.Json;
 
 namespace GaleryApp.Data
 {
