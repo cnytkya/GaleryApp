@@ -7,7 +7,7 @@ namespace GaleryApp.Data
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity, IEntity
     {
         private readonly string _filePath;
-         private int _lastId;
+        private int _lastId;
         public GenericRepository(string filePath)
         //constructor
         {
@@ -25,8 +25,8 @@ namespace GaleryApp.Data
             _filePath = filePath;
         }
 
-       
-       public void Create(T entity)
+
+        public void Create(T entity)
         {
             _lastId++;
             entity.Id = _lastId;
