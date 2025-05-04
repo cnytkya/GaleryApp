@@ -2,7 +2,7 @@
 
 namespace GaleryApp.Models.Entities
 {
-    public class kamyonet : BaseEntity
+    public class Kamyonet : BaseEntity
     {
 
         public int YukKapasitesi { get; set; }
