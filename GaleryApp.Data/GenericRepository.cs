@@ -6,7 +6,7 @@ namespace GaleryApp.Data
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity, IEntity
     {
         private readonly string _filePath;
-
+         private int _lastId;
         public GenericRepository(string filePath)
         //constructor
         {
@@ -24,30 +24,53 @@ namespace GaleryApp.Data
             _filePath = filePath;
         }
 
-        private int _lastId;
-        public void Create(T entity)
+       
+       public void Create(T entity)
         {
-            throw new NotImplementedException();
+            _lastId++;
+            entity.Id = _lastId;
+            var entities = GetAll();
+            entities.Add(entity);
+            SaveAll(entities);
         }
 
-        public void Delete(T entity)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entities = GetAll();
+            var entity = entities.FirstOrDefault(e => e.Id == id);
+            if (entity != null)
+            {
+                entities.Remove(entity);
+                SaveAll(entities);
+            }
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            var json = File.ReadAllText(_filePath);
+            return JsonConvert.DeserializeObject<List<T>>(json);
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            return GetAll().FirstOrDefault(e => e.Id == id);
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            var entities = GetAll();
+            var index = entities.FindIndex(e => e.Id == entity.Id);
+            if (index != -1)
+            {
+                entities[index] = entity;
+                SaveAll(entities);
+            }
+        }
+
+        private void SaveAll(List<T> entities)
+        {
+            var json = JsonConvert.SerializeObject(entities, Formatting.Indented);
+            File.WriteAllText(_filePath, json);
         }
     }
 }
